@@ -1,4 +1,4 @@
-import '../app/globals.css'
+import '@app/globals.css'
 import Image from 'next/image'
 import React from 'react'
 
