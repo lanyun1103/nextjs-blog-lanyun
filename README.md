@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 博客项目
 
-## Getting Started
+这是一个使用 Next.js、Express.js 和 PostgreSQL 构建的博客项目。前端使用 Next.js 进行开发，后端使用 Express.js 提供 API 服务，数据存储在 PostgreSQL 数据库中。
 
-First, run the development server:
+## 主要功能
+
+- 文章列表展示
+- 文章详情查看
+- 文章发布和编辑（管理员）
+- 用户注册和登录
+- 用户评论（登录用户）
+  
+## 技术栈
+
+- 前端框架：Next.js，使用 React Hooks 和 Jotai 进行状态管理
+- UI 库：Tailwind CSS
+- 后端框架：Express.js
+- 数据库：PostgreSQL
+- 容器化技术：Docker
+- CI/CD：Docker Compose，用于在本地开发环境快速构建和运行应用
+- 代码规范检查：ESLint, Husky, and Commitlint
+
+## 开发环境准备
+
+1. 安装 Node.js 和 npm。确保你的开发环境已经安装 Node.js 和 npm。你可以通过在终端运行以下命令来验证它们是否已经安装：
+
+    ```bash
+    node -v
+    npm -v
+    ```
+
+    如果你看到了版本号，那么说明 Node.js 和 npm 已经安装好了。
+
+2. 安装 Docker 和 Docker Compose。请参照官方文档进行安装：
+
+    - Docker：https://docs.docker.com/get-docker/
+    - Docker Compose：https://docs.docker.com/compose/install/
+
+3. 克隆此仓库到你的本地环境：
+
+    ```bash
+    git clone <此仓库的git地址>
+    ```
+
+4. 在项目的根目录中，运行以下命令安装依赖：
+
+    ```bash
+    npm install
+    ```
+
+## 本地开发
+
+在项目的根目录中，运行以下命令启动前端和后端服务：
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+docker-compose up
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+然后，你可以通过浏览器访问 `http://localhost:3000` 来查看前端应用。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 生产环境部署
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+详细的生产环境部署指南会在后续补充。
 
-## Learn More
+## 项目结构
 
-To learn more about Next.js, take a look at the following resources:
+项目的主要目录结构如下：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+/my-next-app
+├── pages        # Next.js 页面组件
+│   ├── _app.js  # Next.js 应用主组件，用于全局状态管理和全局样式
+│   ├── index.js # 首页
+│   └── ...
+├── components   # 可重用的 React 组件
+├── styles       # CSS 样式
+│   └── global.css
+├── server       # Express.js 后端服务
+│   ├── index.js # 后端入口文件
+│   └── ...
+├── docker-compose.yml  # Docker Compose 配置文件
+└── ...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 贡献
 
-## Deploy on Vercel
+我们欢迎任何形式的贡献！如果你发现了一个错误或有任何建议
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+，欢迎提交 issue 或 pull request。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 许可证
+
+MIT
+
+## 联系
+
+如果你有任何问题或建议，欢迎联系我们。
